@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiiis! soy doni</title>
+    <style>
+        @font-face {
+            font-family: 'La Gagliane';
+            src: url('La Gagliane.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'Kind Sans Thin';
+            src: url('kind-sans-thin.otf') format('opentype');
+        }
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: black;
+            overflow: hidden; /* Evita scrolls durante la pantalla inicial */
+        }
+        .content-container {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c43df9e9-7cf9-486f-b650-624a47790895/deyuin6-c7ad1dee-e0ae-423c-8e1a-bc4addf550e0.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2M0M2RmOWU5LTdjZjktNDg2Zi1iNjUwLTYyNGE0Nzc5MDg5NVwvZGV5dWluNi1jN2FkMWRlZS1lMGFlLTQyM2MtOGUxYS1iYzRhZGRmNTUwZTAuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.OWb6V-g3tSZyJeVSmM6DXdXRixOySCEtStOvpeUDZRc') no-repeat center center fixed;
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 2s ease; /* Transition para el fondo */
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            font-family: 'Kind Sans Thin', Arial, sans-serif;
+            position: relative;
+            border: 5px solid;
+            border-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet) 1;
+            animation: rainbow 5s linear infinite;
+            opacity: 0;
+            transition: opacity 2s ease 1s; /* Delay para que aparezca después del fondo */
+        }
+        @keyframes rainbow {
+            0% { border-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet) 1; }
+            100% { border-image: linear-gradient(405deg, red, orange, yellow, green, blue, indigo, violet) 1; }
+        }
+        .title {
+            font-family: 'La Gagliane', Arial, sans-serif;
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .content {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .subsection {
+            margin-top: 20px;
+        }
+        .subsection-title {
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .email, .discord {
+            font-size: 15px;
+            opacity: 0.7;
+        }
+        .thanks {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .start-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            z-index: 1000; /* Ensure the button is on top */
+        }
+    </style>
+</head>
+<body>
+    <button class="start-button" onclick="startPage()">Iniciar Página</button>
+    <div class="content-container">
+        <div class="container" id="content">
+            <div class="title">Holiiis! soy doni</div>
+            <div class="content">Soy un programador de C#, Lua y sé un poco de JS. Cualquier cosa puedes escribirme a mi Gmail (aiuda busco chamba).</div>
+            <div class="email">doniicontact@gmail.com</div>
+            <div class="subsection">
+                <div class="subsection-title">Cosas que me gustan:</div>
+                <div class="content">Los fines de semana,</div>
+                <div class="content">Dormir xd,</div>
+                <div class="content">Socializar,</div>
+                <div class="content">Los videojuegos, a mi me encanta TLoZ</div>
+            </div>
+            <div class="subsection">
+                <div class="subsection-title">Cosas que no me gustan:</div>
+                <div class="content">ps nose, ser ignorado (?  jeje</div>
+            </div>
+            <div class="subsection">
+                <div class="content">Mi user de discord es:</div>
+                <div class="discord">mvqna</div>
+            </div>
+            <div class="thanks">Grax por tu atención ૮ ˶ᵔ ᵕ ᵔ˶ ა</div>
+            <audio id="audio" src="bread.mp3"></audio>
+        </div>
+    </div>
+    <script>
+        function startPage() {
+            document.querySelector('.content-container').style.display = 'flex';
+            document.querySelector('.content-container').style.opacity = 1;
+            document.querySelector('.start-button').style.display = 'none';
+            document.getElementById('content').style.opacity = 1;
+            document.getElementById('audio').play().catch(function(error) {
+                console.log('Error al reproducir el audio:', error);
+            });
+        }
+    </script>
+</body>
+</html>
